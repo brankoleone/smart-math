@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
+
 .App {
 	text-align: center;
 }
@@ -14,13 +16,18 @@
 }
 
 .App-header {
-	min-height: 100vh;
+	min-height: 100px;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: #555555;
+	color: white;
+	background-color: #329DFF;
+}
+
+.App-title {
+	font-size: 48px;
+	font-family: 'Roboto Slab', serif;
 }
 
 .App-link {
