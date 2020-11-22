@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
-@import 'styles/colors.scss';
+@import './styles/colors.scss';
+@import './styles/mixins.scss';
 
 .App {
 	display: flex;
@@ -19,18 +20,27 @@
 }
 
 .App-header {
-	min-height: 100px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	color: white;
 	background-color: $main-blue;
+
+	min-height: 50px;
+
+	@include for-tablet-portrait-up {
+		min-height: 100px;
+	}
 }
 
 .App-title {
-	font-size: 48px;
+	font-size: 24px;
 	font-family: 'Roboto Slab', serif;
+
+	@include for-tablet-portrait-up {
+		font-size: 48px;
+	}
 }
 
 .App-link {
@@ -43,22 +53,20 @@
 
 .App-footer {
 	background-color: $gray;
-	min-height: 50px;
+	min-height: 30px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@include for-tablet-portrait-up {
+		min-height: 50px;
+		.App-copyright {
+			font-size: 14px;
+		}
+	}
 }
 
 .App-copyright {
 	color: $gray-dark;
-	font-size: 14px;
-}
-
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+	font-size: 10px;
 }

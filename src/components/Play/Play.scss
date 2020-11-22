@@ -1,4 +1,5 @@
-@import '../../styles/colors.scss';
+@import '../../styles/colors';
+@import '../../styles/mixins';
 
 .Play {
 	height: 100%;
@@ -6,19 +7,30 @@
 	justify-content: center;
 
 	.exercise {
-		margin-top: 64px;
-		font-size: 144px;
-		line-height: 171px;
+		margin-top: 32px;
+		font-size: 77px;
+		line-height: 82px;
 
 		display: flex;
-		align-items: end;
+		align-items: flex-end;
 
 		color: $blue;
 
 		.sign {
 			color: $main-blue;
-			font-size: 112px;
-			margin: 0 110px;
+			font-size: 56px;
+			margin: 0 55px;
+		}
+
+		@include for-tablet-portrait-up {
+			font-size: 144px;
+			margin-top: 64px;
+			line-height: 171px;
+
+			.sign {
+				font-size: 112px;
+				margin: 0 110px;
+			}
 		}
 	}
 }

@@ -1,0 +1,54 @@
+$phone: 375px;
+$tablet-v: 768px;
+$tablet-h: 1024px;
+$desktop-sm: 1366px;
+$desktop-md: 1536px;
+$desktop-lg: 1920px;
+
+$brpt-jump: 0.02px;
+
+@function recalc($val) {
+	@return calc(#{$val} + #{$brpt-jump});
+}
+
+@mixin for-phone-only {
+	@media (max-width: calc(#{$phone} - #{$brpt-jump})) {
+		@content;
+	}
+}
+
+@mixin for-phone-up {
+	@media (min-width: recalc($phone)) {
+		@content;
+	}
+}
+
+@mixin for-tablet-portrait-up {
+	@media (min-width: $tablet-v) {
+		@content;
+	}
+}
+
+@mixin for-tablet-landscape-up {
+	@media (min-width: $tablet-h) {
+		@content;
+	}
+}
+
+@mixin for-desktop-sm-up {
+	@media (min-width: $desktop-sm) {
+		@content;
+	}
+}
+
+@mixin for-desktop-md-up {
+	@media (min-width: $desktop-md) {
+		@content;
+	}
+}
+
+@mixin for-desktop-lg-up {
+	@media (min-width: $desktop-lg) {
+		@content;
+	}
+}
