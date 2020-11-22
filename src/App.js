@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import Play from './components/Play/Play';
 
 function App() {
 	return (
@@ -7,6 +8,12 @@ function App() {
 			<header className="App-header">
 				<div class="App-title">Умният Математик</div>
 			</header>
+			<main className="App-main">
+				<Play />
+			</main>
+			<footer class="App-footer">
+				<div className="App-copyright">© 2020</div>
+			</footer>
 		</div>
 	);
 }
