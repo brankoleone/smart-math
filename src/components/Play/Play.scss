@@ -1,3 +1,24 @@
+@import '../../styles/colors.scss';
+
 .Play {
 	height: 100%;
+	display: flex;
+	justify-content: center;
+
+	.exercise {
+		margin-top: 64px;
+		font-size: 144px;
+		line-height: 171px;
+
+		display: flex;
+		align-items: end;
+
+		color: $blue;
+
+		.sign {
+			color: $main-blue;
+			font-size: 112px;
+			margin: 0 110px;
+		}
+	}
 }
