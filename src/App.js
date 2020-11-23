@@ -6,12 +6,12 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<div class="App-title">Умният Математик</div>
+				<div className="App-title">Умният Математик</div>
 			</header>
 			<main className="App-main">
 				<Play />
 			</main>
-			<footer class="App-footer">
+			<footer className="App-footer">
 				<div className="App-copyright">© 2020</div>
 			</footer>
 		</div>

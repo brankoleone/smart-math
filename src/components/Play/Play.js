@@ -8,6 +8,7 @@ const Play = () => (
 			<div className="sign">x</div>
 			<div className="second-digit">3</div>
 		</div>
+		<div className="equals-sign"></div>
 	</div>
 );
 
