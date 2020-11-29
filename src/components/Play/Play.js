@@ -9,6 +9,8 @@ const Play = () => (
 			<div className="second-digit">{getRandomDigit()}</div>
 		</div>
 		<div className="equals-sign"></div>
+		<input type="number" className="answerInput" maxLength="3" />
+		<button className="answerButton">Провери</button>
 	</div>
 );
 
