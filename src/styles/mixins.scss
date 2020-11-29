@@ -5,7 +5,7 @@ $desktop-sm: 1366px;
 $desktop-md: 1536px;
 $desktop-lg: 1920px;
 
-$brpt-jump: 0.2px;
+$brpt-jump: 0.5px;
 
 @function recalc($val) {
 	@return calc(#{$val} + #{$brpt-jump});
