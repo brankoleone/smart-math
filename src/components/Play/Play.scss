@@ -59,6 +59,11 @@
 			font-size: 100px;
 		}
 	}
+}
+
+.submitForm {
+	display: flex;
+	flex-direction: column;
 
 	.answerInput {
 		font-family: 'Rubik', sans-serif;
@@ -78,6 +83,14 @@
 		font-size: 56px;
 		line-height: 66px;
 
+		&.success {
+			border-color: #22b727;
+		}
+
+		&.failure {
+			border-color: crimson;
+		}
+
 		@include for-tablet-portrait-up {
 			width: 250px;
 			height: 200px;
@@ -90,9 +103,6 @@
 	}
 
 	.answerButton {
-		// width: 145px;
-		// height: 50px;
-
 		margin: 24px 0;
 
 		@include for-tablet-portrait-up {

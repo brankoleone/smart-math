@@ -1,4 +1,5 @@
-button {
+button,
+input[type='submit'] {
 	background-color: $main-blue;
 	border: none;
 	border-radius: 10px;

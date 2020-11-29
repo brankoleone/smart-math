@@ -1,22 +1,60 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Play.scss';
 
-const Play = () => (
-	<div className="Play">
-		<div className="exercise">
-			<div className="first-digit">{getRandomDigit()}</div>
-			<div className="sign">x</div>
-			<div className="second-digit">{getRandomDigit()}</div>
-		</div>
-		<div className="equals-sign"></div>
-		<input type="number" className="answerInput" maxLength="3" />
-		<button className="answerButton">Провери</button>
-	</div>
-);
+const Play = props => {
+	const [answer, setAnswer] = useState('');
+	const [firstDigit, setFirstDigit] = useState(0);
+	const [secondDigit, setSecondDigit] = useState(0);
 
-function getRandomDigit() {
-	return Math.floor(Math.random() * 10);
-}
+	const [isSuccess, setIsSuccess] = useState(false);
+	const [isFailure, setIsFailure] = useState(false);
+
+	const handleSubmit = evt => {
+		evt.preventDefault();
+		console.log(`Submitting answer: ${firstDigit} * ${secondDigit} ${answer}`);
+
+		setIsSuccess(false);
+		setIsFailure(false);
+
+		if (firstDigit * secondDigit === parseInt(answer)) {
+			console.log('%c success', 'background: forestgreen; color: white; padding: 0.5rem 1rem');
+			setIsSuccess(true);
+		} else {
+			console.log('%c try again', 'background: crimson; color: white; padding: 0.5rem 1rem');
+			setIsFailure(true);
+		}
+	};
+
+	const getRandomDigit = () => {
+		return Math.floor(Math.random() * 10);
+	};
+
+	useEffect(() => {
+		setFirstDigit(getRandomDigit());
+		setSecondDigit(getRandomDigit());
+	}, []);
+
+	return (
+		<div className="Play">
+			<div className="exercise">
+				<div className="first-digit">{firstDigit}</div>
+				<div className="sign">x</div>
+				<div className="second-digit">{secondDigit}</div>
+			</div>
+			<div className="equals-sign"></div>
+			<form className="submitForm" onSubmit={handleSubmit}>
+				<input
+					type="number"
+					className={`answerInput ${isSuccess ? 'success' : ''} ${isFailure ? 'failure' : ''}`}
+					maxLength="3"
+					value={answer}
+					onChange={e => setAnswer(e.target.value)}
+				/>
+				<input type="submit" className="answerButton" value="Провери" />
+			</form>
+		</div>
+	);
+};
 
 Play.propTypes = {};
 
