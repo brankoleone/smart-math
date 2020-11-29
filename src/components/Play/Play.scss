@@ -90,23 +90,13 @@
 	}
 
 	.answerButton {
-		width: 145px;
-		height: 50px;
-		background-color: $main-blue;
-		border: none;
-		border-radius: 10px;
-		color: white;
+		// width: 145px;
+		// height: 50px;
 
-		font-family: Rubik;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 24px;
-		line-height: 28px;
-
-		margin-top: 24px;
+		margin: 24px 0;
 
 		@include for-tablet-portrait-up {
-			margin-top: 40px;
+			margin: 40px 0;
 		}
 	}
 }

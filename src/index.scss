@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 @import './styles/mixins.scss';
 @import './styles/colors.scss';
+@import './styles/buttons.scss';
 
 * {
 	margin: 0;
@@ -14,6 +15,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-input:focus {
-	outline: none;
+input,
+button {
+	&:focus {
+		outline: none;
+	}
 }
