@@ -11,16 +11,16 @@ const Play = props => {
 
 	const handleSubmit = evt => {
 		evt.preventDefault();
-		console.log(`Submitting answer: ${firstDigit} * ${secondDigit} ${answer}`);
+		console.log(`Submitting answer: ${firstDigit} * ${secondDigit} = ${answer}`);
 
 		setIsSuccess(false);
 		setIsFailure(false);
 
 		if (firstDigit * secondDigit === parseInt(answer)) {
-			console.log('%c success', 'background: forestgreen; color: white; padding: 0.5rem 1rem');
+			console.log('%csuccess', 'background: forestgreen; color: white; padding: 0.5rem 1rem');
 			setIsSuccess(true);
 		} else {
-			console.log('%c try again', 'background: crimson; color: white; padding: 0.5rem 1rem');
+			console.log('%ctry again', 'background: crimson; color: white; padding: 0.5rem 1rem');
 			setIsFailure(true);
 		}
 	};
@@ -33,6 +33,12 @@ const Play = props => {
 		setFirstDigit(getRandomDigit());
 		setSecondDigit(getRandomDigit());
 	}, []);
+
+	const inputChange = e => {
+		setIsSuccess(false);
+		setIsFailure(false);
+		setAnswer(e.target.value);
+	};
 
 	return (
 		<div className="Play">
@@ -48,7 +54,7 @@ const Play = props => {
 					className={`answerInput ${isSuccess ? 'success' : ''} ${isFailure ? 'failure' : ''}`}
 					maxLength="3"
 					value={answer}
-					onChange={e => setAnswer(e.target.value)}
+					onChange={inputChange}
 				/>
 				<input type="submit" className="answerButton" value="Провери" />
 			</form>
