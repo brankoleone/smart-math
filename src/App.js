@@ -12,7 +12,7 @@ function App() {
 				<Play />
 			</main>
 			<footer className="App-footer">
-				<div className="App-copyright">© 2020</div>
+				<div className="App-copyright">© 2022</div>
 			</footer>
 		</div>
 	);
